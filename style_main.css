@@ -1,0 +1,145 @@
+main{
+    background: white;
+    margin: 10px 15% 0px 15%;
+    border-radius: 10px;
+    padding: 10px;
+    -webkit-box-shadow: 20px 20px 0px 0px rgba(255, 255, 255, 0.6);
+    -moz-box-shadow: 20px 20px 0px 0px rgba(255, 255, 255, 0.6);
+    box-shadow: 20px 20px 0px 0px rgba(255, 255, 255, 0.6);
+    width: 50%;
+    align-content: center;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+input[type="text"] {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit; 
+  margin: 0;
+}
+.input_grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 2em;
+}
+.input_area:first-child{
+    margin-right: 20px;
+}
+h1{
+    font-family: 'Times New Roman';
+    font-weight: normal;
+}
+.input_zone_text{
+    display: flex;
+    font-size: medium;
+    font-family: 'Cannonade';
+    text-align: left;
+    width: 50%;
+    flex-direction: column;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+.input_zone{
+  display: block;
+  width: 100%;
+  height: calc(2.25rem + 2px);
+  padding: 0.375rem 0.75rem;
+  font-family: inherit;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  color: #212529;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 1px solid #bdbdbd;
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  float: right;
+  box-shadow: 0 0 0 0.2rem rgba(158, 158, 158, 0.25);
+}
+.checkmaks_section{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 2em;
+}
+.check_container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    user-select: none;
+    font-family: 'Cannonade';
+    font-size: medium;
+  }
+  
+.check_container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+.check_container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+.check_container input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+.check_container:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.check_container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+button {
+  font-size:15px;
+  font-family: 'Cannonade';
+  width:140px;
+  height:50px;
+  border-width:1px;
+  color:#666666;
+  border-color:#dcdcdc;
+  font-weight:bold;
+  border-top-left-radius:6px;
+  border-top-right-radius:6px;
+  border-bottom-left-radius:6px;
+  border-bottom-right-radius:6px;
+  box-shadow:inset 0px 1px 0px 0px #ffffff;
+  background:linear-gradient(#ffffff, #f6f6f6);
+}
+button:hover {
+  background: linear-gradient(#f6f6f6, #ffffff);
+}
+button:active {
+position:relative;
+top:1px;
+}

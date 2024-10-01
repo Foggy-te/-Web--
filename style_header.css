@@ -1,0 +1,60 @@
+@font-face {
+    font-family: 'Cannonade';
+    src: url(fonts/Cannonade.ttf);
+}
+body {
+    background: linear-gradient(180deg, rgba(135,206,235,1) 0%, rgba(173,216,230,1) 50%, rgba(135,206,235,1) 100%);
+    background-repeat: no-repeat;
+    margin: 0 auto;
+    height: 100vh;
+    overflow: hidden;
+}
+.logo{
+    display: flex;
+    flex-direction: row;
+}
+.logo img{
+    border-right: 4px solid white;
+}
+h1 {
+    font-family: 'Cannonade';
+    font-size: 40px;
+    color: white;
+    margin-left: 30px;
+}
+@keyframes flyLine {
+    0% {transform: scaleX(0.001) scaleY(2); left: -100%; opacity: 0.8;}
+    100% { left: 100%; opacity: 0.1; }
+}
+.line {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: white;
+    animation: flyLine 25s linear infinite;
+    z-index: -2;
+}
+header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.about_us{
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid white;
+}
+.header_text{
+    margin: 0 50px 10px 50px;
+}
+.header_text a{
+    font-family: 'Cannonade';
+    font-size: x-large;
+    text-decoration: none;
+    color: white;
+}
+.header_text a:hover{
+    color: grey;
+}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Конструктор по созданию заявления для кадрового отдела АО «Международный аэропорт Иркутск»</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.10/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.10/vfs_fonts.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/file-saver"></script>
+    <link rel="stylesheet" href="style_header.css">
+    <link rel="stylesheet" href="style_main.css">
+    <link rel="stylesheet" href="style_button.css">
+</head>
+<body>
+    <header>
+        <div class="logo"><img src="logo/Logo.png" alt="logo"> <h1>Заявление<br>сотрудника</h1></div>
+
+        <div class="about_us">
+            <div class="header_text"><a href="https://iktport.ru/ru/" target="_blank">Офицальный сайт</a></div>
+            <div class="header_text"><a href="https://iktport.ru/ru/about.html" target="_blank">О компании</a></div>
+            <div class="header_text"><a href="https://iktport.ru/ru/about/airportcontacts.html" target="_blank">Контакты</a></div>
+        </div>
+    </header>
+
+    <div class="line"></div>
+    <script>
+        for (let i = 0; i < 7; i++) {
+          let line = document.createElement('div');
+          line.classList.add('line');
+          line.style.top = `${Math.random() * 100}%`;
+          line.style.animationDelay = `${Math.random() * 10}s`;
+          document.body.appendChild(line);
+        }
+    </script>
+    
+    <main id="main">
+        <section class="input_grid">
+            <div class="input_area">
+                <label for="surname" class = "input_zone_text">Фамилия</label> <input type="text" class="input_zone" id="surname" name="surname" placeholder="Иванов">
+                <label for="name" class = "input_zone_text">Имя</label> <input type = "text" class = "input_zone" id="name" name="name" placeholder="Иван">
+                <label for="patronymic" class = "input_zone_text">Отчество</label> <input type = "text" class="input_zone" id="patronymic" name="patronymic" placeholder="Иванович">
+                <label for="post" class = "input_zone_text">Должность</label> <input type = "text" class="input_zone" id="post" name="post">
+            </div>
+
+            <div class="input_area">
+                <label for="department" class = "input_zone_text">Отдел</label><input type="text" class="input_zone" id="department" name="department">
+                <label for="adress" class = "input_zone_text">Адрес</label> <input type = "text" class="input_zone" id="adress" name="adress">
+                <label for="phone" class = "input_zone_text">Телефон</label> <input type = "text" class="input_zone" id="phone" name="phone" placeholder="+7">
+                <label for="mail" class = "input_zone_text">Почта</label> <input type = "text" class="input_zone" id="mail" name="mail" placeholder="Email">
+            </div>    
+        </section>
+
+        <section class="checkmaks_section">
+            <div>
+                <label class="check_container">Ежегодный оплачиваемый отпуск
+                    <input type="checkbox" id="paidVacation" name="type" value="отпуск оплачиваемый">
+                    <span class="checkmark"></span>
+                </label>
+
+                <label class="check_container">Отпуск за свой счёт
+                    <input type="checkbox" id="notPaidVacation" name="type" value="отпуск за свой счёт">
+                    <span class="checkmark"></span>
+                </label>
+
+                <label class="check_container">Декретный отпуск
+                    <input type="checkbox" id="maternityVacation" name="type" value="декретный отпуск">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            
+            <div>
+                <label class="check_container">Перевод по должности
+                    <input type="checkbox" id="transfer_by_position" name="type" value="перевод по должности">
+                    <span class="checkmark"></span>
+                </label>
+                
+                <label class="check_container">Перевод по отделу
+                    <input type="checkbox" id="translation_by_department" name="type" value="перевод по отделу">
+                    <span class="checkmark"></span>
+                </label>
+                
+                <label class="check_container">Увольнение по собственному желанию
+                    <input type="checkbox" id="dismissal" name="type" value="увольнение">
+                    <span class="checkmark"></span>
+                </label>
+                
+            </div>
+        </section>
+        <div class="final">
+            <button id="generate-pdf">Сгенерировать</button>
+        </div>
+        
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
